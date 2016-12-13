@@ -7,7 +7,7 @@ const Song = require('./song-model');
 // YOUR CODE HERE:
 //////////
 
-var PlayList = sequelizeConnection.define('playlist',{
+var Playlist = sequelizeConnection.define('playlist',{
 	title: {
 		type: Sequelize.STRING,
 		validate: {
@@ -19,7 +19,7 @@ var PlayList = sequelizeConnection.define('playlist',{
 
 });
 
-PlayList.belongsToMany(Song, {through: 'playlist-song'})
-Song.belongsToMany(PlayList, {through: 'playlist-song'})
+Playlist.belongsToMany(Song, {through: 'playlist-song'})
+Song.belongsToMany(Playlist, {through: 'playlist-song'})
 
-module.exports = PlayList;
+module.exports = Playlist;
